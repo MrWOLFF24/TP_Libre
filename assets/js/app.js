@@ -14,11 +14,9 @@ const app = (function () {
     }
 
     ajaxCall(function(res){
-        console.log("res =>");
-        bg.style.background = `url(${res.image}) center no-repeat`;
+        bg.style.background = `url('${res.image}') center no-repeat`;
         bg.style.backgroundSize = "cover";
         answer.textContent = res.answer;
-
     });
 
     function btn() {
@@ -27,10 +25,11 @@ const app = (function () {
         });
     }
 
-    window.onload = function init() {
+    window.addEventListener('DOMContentLoaded', function init() {
         bg = document.getElementById("api_test");
         answer = document.getElementById("answer");
         btn();
-    }
+    });
+
 
 }());
